@@ -1,0 +1,76 @@
+﻿@model mvcGrid.Models.Empstructure
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmpInsert</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Empstructure</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpID)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpID)
+                @Html.ValidationMessageFor(model => model.EmpID)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpName)
+                @Html.ValidationMessageFor(model => model.EmpName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpLastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpLastName)
+                @Html.ValidationMessageFor(model => model.EmpLastName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpAge)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpAge)
+                @Html.ValidationMessageFor(model => model.EmpAge)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.EmpAddress)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EmpAddress)
+                @Html.ValidationMessageFor(model => model.EmpAddress)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "EmpList")
+    </div>
+</body>
+</html>

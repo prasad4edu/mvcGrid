@@ -1,0 +1,58 @@
+﻿@model mvcGrid.Models.Empstructure
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmpDetails</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Empstructure</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpID)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpID)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpName)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpLastName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpLastName)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpAge)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpAge)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.EmpAddress)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.EmpAddress)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "EmpEdit", new { EmpId = Model.EmpID}) |
+        @Html.ActionLink("Back to List", "EmpList")
+    </p>
+</body>
+</html>

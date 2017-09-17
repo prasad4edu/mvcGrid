@@ -1,0 +1,65 @@
+﻿@model IEnumerable<mvcGrid.Models.Empstructure>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmpList</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "EmpInsert")
+    </p>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmpAddress)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpAddress)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EmpEdit", new {  EmpId=item.EmpID }) |
+                @Html.ActionLink("Details", "EmpDetails", new { EmpId = item.EmpID }) |
+                @Html.ActionLink("Delete", "EmpDelete", new { EmpId = item.EmpID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>

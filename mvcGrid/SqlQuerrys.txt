@@ -1,0 +1,52 @@
+CREATE TABLE [dbo].[employee](
+	[EmpID] [int] NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[EmpName] [nvarchar](30) NULL,
+	[EmpLastName] [nvarchar](30) NULL,
+	[EmpAge] [int] NULL,
+	[EmpAddress] [nvarchar](50) NULL
+)
+
+
+create procedure dbo.spGetAllEmpDetails
+As
+select * from employee 
+Go
+
+create procedure [dbo].[spGetEmpDetail] 
+(
+@EmpID int
+)
+As
+select * from employee where Empid=@EmpID
+Go
+
+create procedure dbo.spInsertEmpDetail
+(
+@EmpName [nvarchar](30),
+@EmpLastName [nvarchar](30) ,
+@EmpAge [int] ,
+@EmpAddress [nvarchar](50) 
+)
+As
+insert into employee(EmpName,EmpLastName,EmpAge,EmpAddress) values(@EmpName,@EmpLastName,@EmpAge,@EmpAddress)
+Go
+
+create procedure dbo.spUpdateEmpDetail
+(
+@EmpID int,
+@EmpName [nvarchar](30),
+@EmpLastName [nvarchar](30) ,
+@EmpAge [int] ,
+@EmpAddress [nvarchar](50) 
+)
+As
+update employee set EmpName=@EmpName,EmpLastName=@EmpLastName,EmpAge=@EmpAge,EmpAddress=@EmpAddress where EmpId=@EmpID
+Go
+
+create procedure dbo.spDeleteEmpDetail
+(
+@EmpId int
+)
+As
+Delete from employee where EmpId=@EmpId
+Go
